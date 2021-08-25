@@ -163,6 +163,7 @@ try:
             if exitProgram == False:
                 while True:
                     success, img = cap.read()
+                    img = cv2.flip(img, 1)
                     img = detector.findHands(img)
                     lmList, bboxInfo = detector.findPosition(img)
                     img = drawAll(img, buttonList)
